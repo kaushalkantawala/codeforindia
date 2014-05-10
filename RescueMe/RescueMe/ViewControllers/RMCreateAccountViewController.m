@@ -9,6 +9,7 @@
 #import "RMCreateAccountViewController.h"
 #import "Parse/Parse.h"
 #import "RMLocationController.h"
+#import "RMCommonConstants.h"
 
 @interface RMCreateAccountViewController ()
 
@@ -71,6 +72,8 @@
     userObject[@"Phone"] = _txtPhoneNumber.text;
     userObject[@"DeviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"] ;
     [userObject saveInBackground];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_IS_USER_LOGGED_IN];
     [[RMLocationController sharedInstance] createLocationInParse];
 }
 
