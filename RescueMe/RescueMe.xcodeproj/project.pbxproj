@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6097E1D191E814800555224 /* help-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6097E1C191E814800555224 /* help-button.png */; };
-		A6097E1F191EA6FA00555224 /* stop-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6097E1E191EA6FA00555224 /* stop-button.png */; };
+		A6097E28191EC9C700555224 /* stop-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6097E26191EC9C700555224 /* stop-button.png */; };
 		A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA09191E13E700A3527E /* MapKit.framework */; };
 		A614DA0E191E1CC000A3527E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0D191E1CC000A3527E /* Parse.framework */; };
 		A614DA10191E3C1200A3527E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0F191E3C1200A3527E /* AddressBook.framework */; };
@@ -58,7 +58,7 @@
 
 /* Begin PBXFileReference section */
 		A6097E1C191E814800555224 /* help-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "help-button.png"; path = "Images/help-button.png"; sourceTree = "<group>"; };
-		A6097E1E191EA6FA00555224 /* stop-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop-button.png"; sourceTree = "<group>"; };
+		A6097E26191EC9C700555224 /* stop-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-button.png"; path = "Images/stop-button.png"; sourceTree = "<group>"; };
 		A614DA09191E13E700A3527E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A614DA0C191E1AAA00A3527E /* RMCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMCommonConstants.h; path = Source/RMCommonConstants.h; sourceTree = "<group>"; };
 		A614DA0D191E1CC000A3527E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = RescueMe/Frameworks/Parse.framework; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		A6097E1B191E810100555224 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				A6097E1E191EA6FA00555224 /* stop-button.png */,
+				A6097E26191EC9C700555224 /* stop-button.png */,
 				A6097E1C191E814800555224 /* help-button.png */,
 			);
 			name = Images;
@@ -367,9 +367,9 @@
 			files = (
 				A6097E1D191E814800555224 /* help-button.png in Resources */,
 				A6C4DF95191DFE7F003B37BA /* Images.xcassets in Resources */,
-				A6097E1F191EA6FA00555224 /* stop-button.png in Resources */,
 				A6C4DF87191DFE7F003B37BA /* InfoPlist.strings in Resources */,
 				A6C4DF90191DFE7F003B37BA /* Main.storyboard in Resources */,
+				A6097E28191EC9C700555224 /* stop-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
