@@ -21,6 +21,14 @@
 		A6C4DF9E191DFE7F003B37BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF80191DFE7F003B37BA /* UIKit.framework */; };
 		A6C4DFA6191DFE7F003B37BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6C4DFA4191DFE7F003B37BA /* InfoPlist.strings */; };
 		A6C4DFA8191DFE7F003B37BA /* RescueMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFA7191DFE7F003B37BA /* RescueMeTests.m */; };
+		A6C4DFB3191E0503003B37BA /* RMAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFB2191E0503003B37BA /* RMAccountViewController.m */; };
+		A6C4DFB7191E0566003B37BA /* RMDistressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFB6191E0566003B37BA /* RMDistressViewController.m */; };
+		A6C4DFBA191E07AC003B37BA /* RMCreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFB9191E07AC003B37BA /* RMCreateAccountViewController.m */; };
+		A6C4DFBD191E0876003B37BA /* RMEmergencyContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFBC191E0876003B37BA /* RMEmergencyContactsViewController.m */; };
+		A6C4DFC0191E0A2F003B37BA /* RMSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFBF191E0A2F003B37BA /* RMSettingsViewController.m */; };
+		A6C4DFC3191E0B58003B37BA /* RMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC2191E0B58003B37BA /* RMRootViewController.m */; };
+		A6C4DFC6191E0BEA003B37BA /* RMAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC5191E0BEA003B37BA /* RMAlertViewController.m */; };
+		A6C4DFC9191E0C06003B37BA /* RMAlertMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC8191E0C06003B37BA /* RMAlertMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,22 @@
 		A6C4DFA3191DFE7F003B37BA /* RescueMeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RescueMeTests-Info.plist"; sourceTree = "<group>"; };
 		A6C4DFA5191DFE7F003B37BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A6C4DFA7191DFE7F003B37BA /* RescueMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RescueMeTests.m; sourceTree = "<group>"; };
+		A6C4DFB1191E0503003B37BA /* RMAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAccountViewController.h; path = ViewControllers/RMAccountViewController.h; sourceTree = "<group>"; };
+		A6C4DFB2191E0503003B37BA /* RMAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMAccountViewController.m; path = ViewControllers/RMAccountViewController.m; sourceTree = "<group>"; };
+		A6C4DFB5191E0566003B37BA /* RMDistressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMDistressViewController.h; path = ViewControllers/RMDistressViewController.h; sourceTree = "<group>"; };
+		A6C4DFB6191E0566003B37BA /* RMDistressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMDistressViewController.m; path = ViewControllers/RMDistressViewController.m; sourceTree = "<group>"; };
+		A6C4DFB8191E07AC003B37BA /* RMCreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMCreateAccountViewController.h; path = ViewControllers/RMCreateAccountViewController.h; sourceTree = "<group>"; };
+		A6C4DFB9191E07AC003B37BA /* RMCreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMCreateAccountViewController.m; path = ViewControllers/RMCreateAccountViewController.m; sourceTree = "<group>"; };
+		A6C4DFBB191E0876003B37BA /* RMEmergencyContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMEmergencyContactsViewController.h; path = ViewControllers/RMEmergencyContactsViewController.h; sourceTree = "<group>"; };
+		A6C4DFBC191E0876003B37BA /* RMEmergencyContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMEmergencyContactsViewController.m; path = ViewControllers/RMEmergencyContactsViewController.m; sourceTree = "<group>"; };
+		A6C4DFBE191E0A2F003B37BA /* RMSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMSettingsViewController.h; path = ViewControllers/RMSettingsViewController.h; sourceTree = "<group>"; };
+		A6C4DFBF191E0A2F003B37BA /* RMSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMSettingsViewController.m; path = ViewControllers/RMSettingsViewController.m; sourceTree = "<group>"; };
+		A6C4DFC1191E0B58003B37BA /* RMRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMRootViewController.h; path = ViewControllers/RMRootViewController.h; sourceTree = "<group>"; };
+		A6C4DFC2191E0B58003B37BA /* RMRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMRootViewController.m; path = ViewControllers/RMRootViewController.m; sourceTree = "<group>"; };
+		A6C4DFC4191E0BEA003B37BA /* RMAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAlertViewController.h; path = ViewControllers/RMAlertViewController.h; sourceTree = "<group>"; };
+		A6C4DFC5191E0BEA003B37BA /* RMAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMAlertViewController.m; path = ViewControllers/RMAlertViewController.m; sourceTree = "<group>"; };
+		A6C4DFC7191E0C06003B37BA /* RMAlertMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAlertMapViewController.h; path = ViewControllers/RMAlertMapViewController.h; sourceTree = "<group>"; };
+		A6C4DFC8191E0C06003B37BA /* RMAlertMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMAlertMapViewController.m; path = ViewControllers/RMAlertMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +136,7 @@
 		A6C4DF82191DFE7F003B37BA /* RescueMe */ = {
 			isa = PBXGroup;
 			children = (
+				A6C4DFB4191E050B003B37BA /* ViewControllers */,
 				A6C4DF8B191DFE7F003B37BA /* RMAppDelegate.h */,
 				A6C4DF8C191DFE7F003B37BA /* RMAppDelegate.m */,
 				A6C4DF8E191DFE7F003B37BA /* Main.storyboard */,
@@ -150,6 +175,29 @@
 				A6C4DFA4191DFE7F003B37BA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6C4DFB4191E050B003B37BA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C4DFB1191E0503003B37BA /* RMAccountViewController.h */,
+				A6C4DFB2191E0503003B37BA /* RMAccountViewController.m */,
+				A6C4DFB5191E0566003B37BA /* RMDistressViewController.h */,
+				A6C4DFB6191E0566003B37BA /* RMDistressViewController.m */,
+				A6C4DFB8191E07AC003B37BA /* RMCreateAccountViewController.h */,
+				A6C4DFB9191E07AC003B37BA /* RMCreateAccountViewController.m */,
+				A6C4DFBB191E0876003B37BA /* RMEmergencyContactsViewController.h */,
+				A6C4DFBC191E0876003B37BA /* RMEmergencyContactsViewController.m */,
+				A6C4DFBE191E0A2F003B37BA /* RMSettingsViewController.h */,
+				A6C4DFBF191E0A2F003B37BA /* RMSettingsViewController.m */,
+				A6C4DFC1191E0B58003B37BA /* RMRootViewController.h */,
+				A6C4DFC2191E0B58003B37BA /* RMRootViewController.m */,
+				A6C4DFC4191E0BEA003B37BA /* RMAlertViewController.h */,
+				A6C4DFC5191E0BEA003B37BA /* RMAlertViewController.m */,
+				A6C4DFC7191E0C06003B37BA /* RMAlertMapViewController.h */,
+				A6C4DFC8191E0C06003B37BA /* RMAlertMapViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6C4DFB7191E0566003B37BA /* RMDistressViewController.m in Sources */,
+				A6C4DFC3191E0B58003B37BA /* RMRootViewController.m in Sources */,
 				A6C4DF89191DFE7F003B37BA /* main.m in Sources */,
 				A6C4DF8D191DFE7F003B37BA /* RMAppDelegate.m in Sources */,
 				A6C4DF93191DFE7F003B37BA /* RMViewController.m in Sources */,
+				A6C4DFC0191E0A2F003B37BA /* RMSettingsViewController.m in Sources */,
+				A6C4DFBD191E0876003B37BA /* RMEmergencyContactsViewController.m in Sources */,
+				A6C4DFB3191E0503003B37BA /* RMAccountViewController.m in Sources */,
+				A6C4DFC9191E0C06003B37BA /* RMAlertMapViewController.m in Sources */,
+				A6C4DFC6191E0BEA003B37BA /* RMAlertViewController.m in Sources */,
+				A6C4DFBA191E07AC003B37BA /* RMCreateAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
