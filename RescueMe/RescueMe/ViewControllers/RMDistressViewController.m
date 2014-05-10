@@ -46,4 +46,9 @@
 }
 */
 
+- (void)btnHelpTapped:(id)sender
+{
+    
+}
+
 @end
