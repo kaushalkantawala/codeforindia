@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="1401" y="1847"/>
         </scene>
-        <!--Alert Map View Controller-->
+        <!--Alert Map View Controller - Distress Route-->
         <scene sceneID="p3I-I7-mqk">
             <objects>
                 <viewController id="IrV-5c-Y59" customClass="RMAlertMapViewController" sceneMemberID="viewController">
@@ -162,7 +162,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="soh-Si-g07"/>
+                    <navigationItem key="navigationItem" title="Distress Route" id="soh-Si-g07"/>
                     <connections>
                         <outlet property="btnRoute" destination="4ic-EY-iGp" id="rRu-uD-oqW"/>
                         <outlet property="mapView" destination="nWS-mD-L2b" id="4y2-L0-Pn1"/>
@@ -346,10 +346,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-N3-EOe">
-                                <rect key="frame" x="135" y="269" width="51" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-N3-EOe">
+                                <rect key="frame" x="74" y="197" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="HELP!!!">
+                                <state key="normal" image="help-button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -357,15 +357,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fQU-6T-ozn">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="GGg-sN-JJ4">
-                            <connections>
-                                <segue destination="xNJ-8O-tbn" kind="push" id="yYY-1l-00C"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="fQU-6T-ozn"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="btnHelp" destination="u2K-N3-EOe" id="BIb-6d-Pf7"/>
@@ -431,6 +425,9 @@
             <point key="canvasLocation" x="875" y="1847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="help-button.png" width="274" height="268"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

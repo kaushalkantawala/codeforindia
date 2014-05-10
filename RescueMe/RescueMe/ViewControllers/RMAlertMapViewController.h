@@ -11,9 +11,10 @@
 
 @interface RMAlertMapViewController : UIViewController <MKMapViewDelegate>
 
+@property (nonatomic, strong) NSArray *points;
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
-
 @property (strong, nonatomic) IBOutlet UIButton *btnRoute;
+
 - (IBAction)btnRouteTapped:(id)sender;
 
 @end
