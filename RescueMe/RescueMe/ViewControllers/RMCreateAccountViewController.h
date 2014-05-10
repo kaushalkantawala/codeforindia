@@ -15,8 +15,8 @@
 @property (nonatomic, strong) IBOutlet UITextField *txtPassword;
 @property (nonatomic, strong) IBOutlet UITextField *txtPhoneNumber;
 
-@property (nonatomic, strong) IBOutlet UIButton *btnCreateAccount;
-
-- (IBAction)btnCreateAccountTapped:(id)sender;
-
+//@property (nonatomic, strong) IBOutlet UIButton *btnCreateAccount;
+//
+//- (IBAction)btnCreateAccountTapped:(id)sender;
+//
 @end

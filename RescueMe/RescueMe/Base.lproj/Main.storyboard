@@ -82,6 +82,33 @@
                                     <segue destination="IrV-5c-Y59" kind="push" id="JTL-eF-ZX4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlY-dK-46K">
+                                <rect key="frame" x="133" y="518" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnDismissTapped:" destination="chn-7a-4Se" eventType="touchUpInside" id="H3n-bY-zMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp9-lX-4ty">
+                                <rect key="frame" x="124" y="480" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Call Police">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnCallPoliceTapped:" destination="chn-7a-4Se" eventType="touchUpInside" id="aaK-ch-UWE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your friend XYZ is in distress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lij-cK-xf6">
+                                <rect key="frame" x="50" y="168" width="220" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -93,6 +120,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnCallPolice" destination="Rp9-lX-4ty" id="eeV-w8-m4V"/>
+                        <outlet property="btnDismiss" destination="RlY-dK-46K" id="FFD-1Z-cZ8"/>
+                        <outlet property="lblDistressedInfo" destination="Lij-cK-xf6" id="hqp-Dj-frk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRf-64-hKO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,9 +141,32 @@
                     <view key="view" contentMode="scaleToFill" id="UEw-hj-UWU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nWS-mD-L2b">
+                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IrV-5c-Y59" id="amR-b4-3Ym"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ic-EY-iGp">
+                                <rect key="frame" x="140" y="518" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Route">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnRouteTapped:" destination="IrV-5c-Y59" eventType="touchUpInside" id="TDS-ZK-3C1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="soh-Si-g07"/>
+                    <connections>
+                        <outlet property="btnRoute" destination="4ic-EY-iGp" id="rRu-uD-oqW"/>
+                        <outlet property="mapView" destination="nWS-mD-L2b" id="4y2-L0-Pn1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR5-z8-nDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,6 +250,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="7hm-Dn-2GF"/>
+                    <connections>
+                        <outlet property="txtFirstName" destination="E31-pK-VYE" id="gC3-jj-yIi"/>
+                        <outlet property="txtLastName" destination="L5o-5D-5t2" id="Mg2-YK-NCF"/>
+                        <outlet property="txtPassword" destination="4is-0r-Jcy" id="XPX-Tk-6dT"/>
+                        <outlet property="txtPhoneNumber" destination="PiE-8V-b9f" id="Z3f-zv-OsF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yc-X0-AKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,12 +287,19 @@
                                 <rect key="frame" x="0.0" y="68" width="320" height="442"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MAI-Nc-Uzs" id="ssf-hi-xpH"/>
+                                    <outlet property="delegate" destination="MAI-Nc-Uzs" id="PDo-e4-RUN"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="dVI-LW-g8T"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableViewContactPicker" destination="iQl-0K-BUZ" id="2Nc-6u-F9r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Br1-2X-LeS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -255,6 +323,9 @@
                                 <state key="normal" title="HELP!!!">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnHelpTapped:" destination="NVz-ug-Vnp" eventType="touchUpInside" id="ACG-AQ-bzF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -267,6 +338,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="btnHelp" destination="u2K-N3-EOe" id="BIb-6d-Pf7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yE-Cm-N9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
