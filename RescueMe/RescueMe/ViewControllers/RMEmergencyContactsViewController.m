@@ -33,6 +33,9 @@
     [super viewDidLoad];
     self.contacts = [NSMutableArray array];
     self.emergencyContacts = [[NSUserDefaults standardUserDefaults] objectForKey:RM_EMERGENCY_CONTACTS];
+    if (!self.emergencyContacts) {
+        self.emergencyContacts = [NSMutableArray array];
+    }
 
     [self loadAddressBook];
     if (self.emergencyContacts.count < 3) {

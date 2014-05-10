@@ -30,9 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_IS_USER_LOGGED_IN];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+//    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
     
     PFObject *testObject = [PFObject objectWithClassName:@"RescueMeTestObject"];
     testObject[@"distressId"] = @"somedistressid";
