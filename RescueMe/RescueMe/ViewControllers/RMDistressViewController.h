@@ -10,4 +10,9 @@
 
 @interface RMDistressViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIButton *btnHelp;
+//@property (nonatomic, strong) IBOutlet UIBarButtonItem *bbiSettings;
+
+- (IBAction)btnHelpTapped:(id)sender;
+
 @end
