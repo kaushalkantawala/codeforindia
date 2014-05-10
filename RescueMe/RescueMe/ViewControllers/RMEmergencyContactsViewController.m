@@ -13,6 +13,7 @@
 @interface RMEmergencyContactsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *contacts;
+@property (nonatomic, strong) NSMutableArray *emergencyContacts;
 
 @end
 
@@ -30,7 +31,10 @@
 {
     [super viewDidLoad];
     self.contacts = [NSMutableArray array];
+    self.emergencyContacts = [NSMutableArray array];
     [self loadAddressBook];
+    self.btnConfirmContacts.enabled = NO;
+
     // Do any additional setup after loading the view.
 }
 
@@ -125,5 +129,26 @@
 }
 
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    NSDictionary *contact = self.contacts[indexPath.row];
+
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        [self.emergencyContacts removeObject:contact];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        self.btnConfirmContacts.enabled = NO;
+    }
+    else {
+        if (self.emergencyContacts.count < 3) {
+            [self.emergencyContacts addObject:contact];
+            if (self.emergencyContacts.count == 3) {
+                self.btnConfirmContacts.enabled = YES;
+            }
+                
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
+}
 
 @end

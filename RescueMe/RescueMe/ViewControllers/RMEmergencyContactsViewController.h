@@ -11,7 +11,7 @@
 @interface RMEmergencyContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableViewContactPicker;
-//@property (nonatomic, strong) IBOutlet UIButton *btnConfirmContacts;
+@property (nonatomic, strong) IBOutlet UIButton *btnConfirmContacts;
 //
 //- (IBAction)btnConfirmContactsTapped:(id)sender;
 
