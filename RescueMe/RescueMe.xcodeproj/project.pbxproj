@@ -41,6 +41,7 @@
 		E121C83F191E2BB7003E34D6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C83E191E2BB7003E34D6 /* Security.framework */; };
 		E121C841191E2BBE003E34D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C840191E2BBE003E34D6 /* StoreKit.framework */; };
 		E121C843191E2BC7003E34D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */; };
+		E121C846191E5314003E34D6 /* RMLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E121C845191E5314003E34D6 /* RMLocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		E121C83E191E2BB7003E34D6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E121C840191E2BBE003E34D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E121C844191E5314003E34D6 /* RMLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMLocationController.h; path = Source/RMLocationController.h; sourceTree = "<group>"; };
+		E121C845191E5314003E34D6 /* RMLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMLocationController.m; path = Source/RMLocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				A614DA0C191E1AAA00A3527E /* RMCommonConstants.h */,
+				E121C844191E5314003E34D6 /* RMLocationController.h */,
+				E121C845191E5314003E34D6 /* RMLocationController.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 				ORGANIZATIONNAME = DJ911;
 				TargetAttributes = {
 					A6C4DF78191DFE7F003B37BA = {
+						DevelopmentTeam = 2A8NQJ5KS6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -367,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6C4DFB7191E0566003B37BA /* RMDistressViewController.m in Sources */,
+				E121C846191E5314003E34D6 /* RMLocationController.m in Sources */,
 				A6C4DFC3191E0B58003B37BA /* RMRootViewController.m in Sources */,
 				A6C4DF89191DFE7F003B37BA /* main.m in Sources */,
 				A6C4DF8D191DFE7F003B37BA /* RMAppDelegate.m in Sources */,
@@ -501,6 +508,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RescueMe/Frameworks",
@@ -509,6 +518,7 @@
 				GCC_PREFIX_HEADER = "RescueMe/RescueMe-Prefix.pch";
 				INFOPLIST_FILE = "RescueMe/RescueMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -518,6 +528,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/RescueMe/Frameworks",
@@ -526,6 +538,7 @@
 				GCC_PREFIX_HEADER = "RescueMe/RescueMe-Prefix.pch";
 				INFOPLIST_FILE = "RescueMe/RescueMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
