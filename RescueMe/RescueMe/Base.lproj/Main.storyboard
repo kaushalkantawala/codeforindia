@@ -282,6 +282,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnConfirmContactsTapped:" destination="MAI-Nc-Uzs" eventType="touchUpInside" id="MsC-Yk-MXm"/>
                                     <segue destination="NVz-ug-Vnp" kind="modal" id="8MX-GL-bhQ"/>
                                 </connections>
                             </button>

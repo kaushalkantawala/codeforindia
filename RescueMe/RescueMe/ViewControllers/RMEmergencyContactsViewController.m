@@ -8,6 +8,7 @@
 
 #import "RMEmergencyContactsViewController.h"
 
+#import <Parse/Parse.h>
 #import <AddressBook/AddressBook.h>
 
 @interface RMEmergencyContactsViewController ()
@@ -148,6 +149,16 @@
                 
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
+    }
+}
+
+- (void)btnConfirmContactsTapped:(id)sender
+{
+    for (NSDictionary *emergencyContact in self.emergencyContacts) {
+        PFObject *emergencyContactObj = [PFObject objectWithClassName:@"EmergencyContacts"];
+        emergencyContactObj[@"deviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];        
+        emergencyContactObj[@"phoneNumber"] = emergencyContact[@"number"];
+        [emergencyContactObj saveInBackground];
     }
 }
 

@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) IBOutlet UITableView *tableViewContactPicker;
 @property (nonatomic, strong) IBOutlet UIButton *btnConfirmContacts;
-//
-//- (IBAction)btnConfirmContactsTapped:(id)sender;
+
+- (IBAction)btnConfirmContactsTapped:(id)sender;
 
 @end
