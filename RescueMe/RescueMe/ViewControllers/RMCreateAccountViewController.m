@@ -7,6 +7,7 @@
 //
 
 #import "RMCreateAccountViewController.h"
+#import "Parse/Parse.h"
 
 @interface RMCreateAccountViewController ()
 
@@ -33,6 +34,17 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)btnCreateAccountTapped:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults] setObject:_txtFirstName.text forKey:@"FirstName"];
+    [[NSUserDefaults standardUserDefaults] setObject:_txtLastName.text forKey:@"LastName"];
+    [[NSUserDefaults standardUserDefaults] setObject:_txtPassword.text forKey:@"Password"];
+    [[NSUserDefaults standardUserDefaults] setObject:_txtPhoneNumber forKey:@"Phone"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[UIDevice currentDevice] identifierForVendor] forKey:@"deviceId"];
+    
+
 }
 
 /*
