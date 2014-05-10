@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RMSettingsViewController : UIViewController
+@interface RMSettingsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @end

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMLocationController.h"
 
-@interface RMCreateAccountViewController : UIViewController
+@interface RMCreateAccountViewController : UIViewController <UITextFieldDelegate>
 
+@property (nonatomic, strong) IBOutlet UITextField *txtFirstName;
+@property (nonatomic, strong) IBOutlet UITextField *txtLastName;
+@property (nonatomic, strong) IBOutlet UITextField *txtPassword;
+@property (nonatomic, strong) IBOutlet UITextField *txtPhoneNumber;
+@property (nonatomic, strong) IBOutlet UIButton *btnCreateAccount;
+
+- (IBAction)btnCreateAccountTapped:(id)sender;
 @end

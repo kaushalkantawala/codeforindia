@@ -7,6 +7,8 @@
 //
 
 #import "RMRootViewController.h"
+#import "RMCommonConstants.h"
+#import "Parse/Parse.h"
 
 @interface RMRootViewController ()
 
@@ -27,12 +29,50 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"RescueMeTestObject"];
+    testObject[@"distressId"] = @"somedistressid";
+    [testObject saveInBackground];
+    
+    _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    _locationManager.delegate = self; // we set the delegate of locationManager to self.
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    
+    [_locationManager startUpdatingLocation];  //requesting location updates
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UIViewController * vc;
+    
+    BOOL didReceivePN = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_DID_RECEIVE_PUSH_NOTIFICATION] boolValue];
+    BOOL isUserLoggedIn = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_IS_USER_LOGGED_IN] boolValue];
+    
+    if (didReceivePN) {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+    }
+    else if (isUserLoggedIn) {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressNavigationController"];
+    }
+    else {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMAccountNavigationController"];
+    }
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+
 }
 
 /*

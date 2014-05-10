@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6097E1D191E814800555224 /* help-button.png in Resources */ = {isa = PBXBuildFile; fileRef = A6097E1C191E814800555224 /* help-button.png */; };
+		A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA09191E13E700A3527E /* MapKit.framework */; };
+		A614DA0E191E1CC000A3527E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0D191E1CC000A3527E /* Parse.framework */; };
+		A614DA10191E3C1200A3527E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0F191E3C1200A3527E /* AddressBook.framework */; };
 		A6C4DF7D191DFE7F003B37BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7C191DFE7F003B37BA /* Foundation.framework */; };
 		A6C4DF7F191DFE7F003B37BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */; };
 		A6C4DF81191DFE7F003B37BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF80191DFE7F003B37BA /* UIKit.framework */; };
@@ -29,6 +33,16 @@
 		A6C4DFC3191E0B58003B37BA /* RMRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC2191E0B58003B37BA /* RMRootViewController.m */; };
 		A6C4DFC6191E0BEA003B37BA /* RMAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC5191E0BEA003B37BA /* RMAlertViewController.m */; };
 		A6C4DFC9191E0C06003B37BA /* RMAlertMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6C4DFC8191E0C06003B37BA /* RMAlertMapViewController.m */; };
+		E121C833191E2B71003E34D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C832191E2B71003E34D6 /* AudioToolbox.framework */; };
+		E121C835191E2B77003E34D6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C834191E2B77003E34D6 /* CFNetwork.framework */; };
+		E121C837191E2B8A003E34D6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C836191E2B8A003E34D6 /* CoreLocation.framework */; };
+		E121C839191E2B93003E34D6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C838191E2B93003E34D6 /* libz.dylib */; };
+		E121C83B191E2BA1003E34D6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C83A191E2BA1003E34D6 /* MobileCoreServices.framework */; };
+		E121C83D191E2BAC003E34D6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C83C191E2BAC003E34D6 /* QuartzCore.framework */; };
+		E121C83F191E2BB7003E34D6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C83E191E2BB7003E34D6 /* Security.framework */; };
+		E121C841191E2BBE003E34D6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C840191E2BBE003E34D6 /* StoreKit.framework */; };
+		E121C843191E2BC7003E34D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */; };
+		E121C846191E5314003E34D6 /* RMLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E121C845191E5314003E34D6 /* RMLocationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +56,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6097E1C191E814800555224 /* help-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "help-button.png"; path = "Images/help-button.png"; sourceTree = "<group>"; };
+		A614DA09191E13E700A3527E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A614DA0C191E1AAA00A3527E /* RMCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMCommonConstants.h; path = Source/RMCommonConstants.h; sourceTree = "<group>"; };
+		A614DA0D191E1CC000A3527E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = RescueMe/Frameworks/Parse.framework; sourceTree = "<group>"; };
+		A614DA0F191E3C1200A3527E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A6C4DF79191DFE7F003B37BA /* RescueMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RescueMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C4DF7C191DFE7F003B37BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -77,6 +96,17 @@
 		A6C4DFC5191E0BEA003B37BA /* RMAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMAlertViewController.m; path = ViewControllers/RMAlertViewController.m; sourceTree = "<group>"; };
 		A6C4DFC7191E0C06003B37BA /* RMAlertMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMAlertMapViewController.h; path = ViewControllers/RMAlertMapViewController.h; sourceTree = "<group>"; };
 		A6C4DFC8191E0C06003B37BA /* RMAlertMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMAlertMapViewController.m; path = ViewControllers/RMAlertMapViewController.m; sourceTree = "<group>"; };
+		E121C832191E2B71003E34D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E121C834191E2B77003E34D6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E121C836191E2B8A003E34D6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E121C838191E2B93003E34D6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E121C83A191E2BA1003E34D6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E121C83C191E2BAC003E34D6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E121C83E191E2BB7003E34D6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E121C840191E2BBE003E34D6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E121C844191E5314003E34D6 /* RMLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMLocationController.h; path = Source/RMLocationController.h; sourceTree = "<group>"; };
+		E121C845191E5314003E34D6 /* RMLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMLocationController.m; path = Source/RMLocationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +114,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A614DA10191E3C1200A3527E /* AddressBook.framework in Frameworks */,
+				E121C843191E2BC7003E34D6 /* SystemConfiguration.framework in Frameworks */,
+				E121C841191E2BBE003E34D6 /* StoreKit.framework in Frameworks */,
+				E121C83F191E2BB7003E34D6 /* Security.framework in Frameworks */,
+				E121C83D191E2BAC003E34D6 /* QuartzCore.framework in Frameworks */,
+				E121C83B191E2BA1003E34D6 /* MobileCoreServices.framework in Frameworks */,
+				E121C839191E2B93003E34D6 /* libz.dylib in Frameworks */,
+				E121C837191E2B8A003E34D6 /* CoreLocation.framework in Frameworks */,
 				A6C4DF7F191DFE7F003B37BA /* CoreGraphics.framework in Frameworks */,
+				E121C835191E2B77003E34D6 /* CFNetwork.framework in Frameworks */,
+				E121C833191E2B71003E34D6 /* AudioToolbox.framework in Frameworks */,
+				A614DA0E191E1CC000A3527E /* Parse.framework in Frameworks */,
 				A6C4DF81191DFE7F003B37BA /* UIKit.framework in Frameworks */,
+				A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */,
 				A6C4DF7D191DFE7F003B37BA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +145,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6097E1B191E810100555224 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A6097E1C191E814800555224 /* help-button.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		A614DA0B191E1A7600A3527E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				A614DA0C191E1AAA00A3527E /* RMCommonConstants.h */,
+				E121C844191E5314003E34D6 /* RMLocationController.h */,
+				E121C845191E5314003E34D6 /* RMLocationController.m */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
 		A6C4DF70191DFE7F003B37BA = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +185,18 @@
 		A6C4DF7B191DFE7F003B37BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A614DA0F191E3C1200A3527E /* AddressBook.framework */,
+				E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */,
+				E121C840191E2BBE003E34D6 /* StoreKit.framework */,
+				E121C83E191E2BB7003E34D6 /* Security.framework */,
+				E121C83C191E2BAC003E34D6 /* QuartzCore.framework */,
+				E121C83A191E2BA1003E34D6 /* MobileCoreServices.framework */,
+				E121C838191E2B93003E34D6 /* libz.dylib */,
+				E121C836191E2B8A003E34D6 /* CoreLocation.framework */,
+				E121C834191E2B77003E34D6 /* CFNetwork.framework */,
+				E121C832191E2B71003E34D6 /* AudioToolbox.framework */,
+				A614DA0D191E1CC000A3527E /* Parse.framework */,
+				A614DA09191E13E700A3527E /* MapKit.framework */,
 				A6C4DF7C191DFE7F003B37BA /* Foundation.framework */,
 				A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */,
 				A6C4DF80191DFE7F003B37BA /* UIKit.framework */,
@@ -136,6 +208,8 @@
 		A6C4DF82191DFE7F003B37BA /* RescueMe */ = {
 			isa = PBXGroup;
 			children = (
+				A6097E1B191E810100555224 /* Images */,
+				A614DA0B191E1A7600A3527E /* Source */,
 				A6C4DFB4191E050B003B37BA /* ViewControllers */,
 				A6C4DF8B191DFE7F003B37BA /* RMAppDelegate.h */,
 				A6C4DF8C191DFE7F003B37BA /* RMAppDelegate.m */,
@@ -248,6 +322,17 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DJ911;
 				TargetAttributes = {
+					A6C4DF78191DFE7F003B37BA = {
+						DevelopmentTeam = 2A8NQJ5KS6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					A6C4DF99191DFE7F003B37BA = {
 						TestTargetID = A6C4DF78191DFE7F003B37BA;
 					};
@@ -277,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6097E1D191E814800555224 /* help-button.png in Resources */,
 				A6C4DF95191DFE7F003B37BA /* Images.xcassets in Resources */,
 				A6C4DF87191DFE7F003B37BA /* InfoPlist.strings in Resources */,
 				A6C4DF90191DFE7F003B37BA /* Main.storyboard in Resources */,
@@ -299,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6C4DFB7191E0566003B37BA /* RMDistressViewController.m in Sources */,
+				E121C846191E5314003E34D6 /* RMLocationController.m in Sources */,
 				A6C4DFC3191E0B58003B37BA /* RMRootViewController.m in Sources */,
 				A6C4DF89191DFE7F003B37BA /* main.m in Sources */,
 				A6C4DF8D191DFE7F003B37BA /* RMAppDelegate.m in Sources */,
@@ -433,10 +520,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RescueMe/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RescueMe/RescueMe-Prefix.pch";
 				INFOPLIST_FILE = "RescueMe/RescueMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,10 +540,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/RescueMe/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RescueMe/RescueMe-Prefix.pch";
 				INFOPLIST_FILE = "RescueMe/RescueMe-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -513,6 +614,7 @@
 				A6C4DFAD191DFE7F003B37BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6C4DFAE191DFE7F003B37BA /* Build configuration list for PBXNativeTarget "RescueMeTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +623,7 @@
 				A6C4DFB0191DFE7F003B37BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
