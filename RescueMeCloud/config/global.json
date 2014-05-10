@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "CodeForIndia": {
+            "applicationId": "ffpXx4E4hBuTvY05bCs6Pc6F0myJKHM19tJ82b0s", 
+            "masterKey": "BM7QRZEXfcTU7Uwtkzm1ARoGwUOrUMLMh13omGQE"
+        }, 
+        "_default": {
+            "link": "CodeForIndia"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}
