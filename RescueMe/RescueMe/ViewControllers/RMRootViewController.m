@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_IS_USER_LOGGED_IN];
     
 //    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
@@ -37,6 +37,12 @@
     PFObject *testObject = [PFObject objectWithClassName:@"RescueMeTestObject"];
     testObject[@"distressId"] = @"RonakSTFU";
     [testObject saveInBackground];
+    
+    _locationManager = [[CLLocationManager alloc]init]; // initializing locationManager
+    _locationManager.delegate = self; // we set the delegate of locationManager to self.
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest; // setting the accuracy
+    
+    [_locationManager startUpdatingLocation];  //requesting location updates
 
 }
 
@@ -65,6 +71,10 @@
     }
     
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+
 }
 
 /*

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CoreLocation/CLLocationManager.h"
 
-@interface RMRootViewController : UIViewController
+@interface RMRootViewController : UIViewController <CLLocationManagerDelegate>
+
+@property(nonatomic, strong) CLLocationManager* locationManager;
 
 @end

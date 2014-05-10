@@ -8,6 +8,7 @@
 
 #import "RMCreateAccountViewController.h"
 #import "Parse/Parse.h"
+#import "RMLocationController.h"
 
 @interface RMCreateAccountViewController ()
 
@@ -33,6 +34,10 @@
     _txtPassword.delegate = self;
     _txtPhoneNumber.delegate = self;
     
+}
+
+-(void) viewDidAppear:(BOOL)animated
+{
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +73,13 @@
     userObject[@"Phone"] = _txtPhoneNumber.text;
     userObject[@"DeviceId"] = deviceId;
     [userObject saveInBackground];
+    [[RMLocationController sharedInstance] createLocationInParse];
+}
+
+-(void) prepareForSegue:(UIStoryboardPopoverSegue *)segue sender:(id)sender
+{
+
+
 }
 
 /*

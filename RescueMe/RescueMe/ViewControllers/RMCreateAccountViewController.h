@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RMLocationController.h"
 
 @interface RMCreateAccountViewController : UIViewController <UITextFieldDelegate>
 
