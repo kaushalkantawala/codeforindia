@@ -78,15 +78,23 @@
      
 - (void)sendDistressCall
 {
-    PFObject *testObject = [PFObject objectWithClassName:@"pushNotification"];
+    PFObject *testObject = [PFObject objectWithClassName:@"distress"];
     
     testObject[@"deviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
-    
     testObject[@"latitude"] = [NSNumber numberWithDouble:self.lat];
     testObject[@"longitude"] = [NSNumber numberWithDouble:self.lon];
     testObject[@"miles"] = @(5);
+    testObject[@"ack"] = @[@""];
     
     [testObject saveInBackground];
+    
+    [PFCloud callFunctionInBackground:@"push"
+                       withParameters:@{ @"deviceId": [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"] }
+                                block:^(NSArray *results, NSError *error) {
+                                    if (!error) {
+                                        // this is where you handle the results and change the UI.
+                                    }
+                                }];
 }
 
 #pragma mark - CLLocationManagerDelegate
