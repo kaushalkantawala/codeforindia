@@ -10,6 +10,8 @@
 
 @interface RMAlertViewController : UIViewController
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *distressId;
 @property (nonatomic, strong) IBOutlet UILabel *lblDistressedInfo;
 @property (nonatomic, strong) IBOutlet UIButton *btnDismiss;
 @property (nonatomic, strong) IBOutlet UIButton *btnCallPolice;
