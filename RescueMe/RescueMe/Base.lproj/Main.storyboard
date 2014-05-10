@@ -149,10 +149,10 @@
                                     <outlet property="delegate" destination="IrV-5c-Y59" id="amR-b4-3Ym"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ic-EY-iGp">
-                                <rect key="frame" x="140" y="518" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ic-EY-iGp">
+                                <rect key="frame" x="69" y="473" width="182" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Route">
+                                <state key="normal" title="Route" image="vector-super-girl.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -497,6 +497,7 @@
     <resources>
         <image name="help-button.png" width="274" height="268"/>
         <image name="stop-button.png" width="300" height="300"/>
+        <image name="vector-super-girl.png" width="350" height="243"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

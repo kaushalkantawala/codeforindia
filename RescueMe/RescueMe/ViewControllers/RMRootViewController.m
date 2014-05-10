@@ -58,6 +58,7 @@
     BOOL didReceivePN = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_DID_RECEIVE_PUSH_NOTIFICATION] boolValue];
     BOOL isUserLoggedIn = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_IS_USER_LOGGED_IN] boolValue];
     
+    
     if (didReceivePN) {
         vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
                 [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
