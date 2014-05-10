@@ -10,11 +10,11 @@
 
 #import <Parse/Parse.h>
 #import <AddressBook/AddressBook.h>
+#import "RMCommonConstants.h"
 
 @interface RMEmergencyContactsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *contacts;
-@property (nonatomic, strong) NSMutableArray *emergencyContacts;
 
 @end
 
@@ -32,9 +32,12 @@
 {
     [super viewDidLoad];
     self.contacts = [NSMutableArray array];
-    self.emergencyContacts = [NSMutableArray array];
+    self.emergencyContacts = [[NSUserDefaults standardUserDefaults] objectForKey:RM_EMERGENCY_CONTACTS];
+
     [self loadAddressBook];
-    self.btnConfirmContacts.enabled = NO;
+    if (self.emergencyContacts.count < 3) {
+        self.btnConfirmContacts.enabled = NO;
+    }
 
     // Do any additional setup after loading the view.
 }
@@ -123,6 +126,12 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
+    NSDictionary *contact = self.contacts[indexPath.row];
+    
+    if ([self.emergencyContacts containsObject:contact]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+
     cell.textLabel.text = self.contacts[indexPath.row][@"name"];
     cell.detailTextLabel.text = self.contacts[indexPath.row][@"number"];
     
@@ -154,6 +163,7 @@
 
 - (void)btnConfirmContactsTapped:(id)sender
 {
+    [[NSUserDefaults standardUserDefaults] setObject:self.emergencyContacts forKey:RM_EMERGENCY_CONTACTS];
     for (NSDictionary *emergencyContact in self.emergencyContacts) {
         PFObject *emergencyContactObj = [PFObject objectWithClassName:@"EmergencyContacts"];
         emergencyContactObj[@"deviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];        

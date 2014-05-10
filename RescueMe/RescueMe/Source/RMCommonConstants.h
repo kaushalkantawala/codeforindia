@@ -11,5 +11,6 @@
 
 #define RM_IS_USER_LOGGED_IN @"isUserLoggedIn"
 #define RM_DID_RECEIVE_PUSH_NOTIFICATION @"didReceivePushNotification"
+#define RM_EMERGENCY_CONTACTS @"emergencyContacts"
 
 #endif
