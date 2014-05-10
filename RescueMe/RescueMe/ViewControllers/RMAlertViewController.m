@@ -9,6 +9,7 @@
 #import "RMAlertViewController.h"
 
 #import "RMAlertMapViewController.h"
+#import <Parse/Parse.h>
 
 @interface RMAlertViewController ()
 
@@ -58,7 +59,20 @@
 
 - (IBAction)btnDismissTapped:(id)sender
 {
-    
+    NSString* devId = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
+    NSString* vicName = [[NSUserDefaults standardUserDefaults] objectForKey:@"victimName"];
+    NSString* distressId = devId;
+    [PFCloud callFunctionInBackground:@"acknowledge"
+                       withParameters:@{@"deviceid": [[NSUserDefaults standardUserDefaults] objectForKey:@""],
+                                        @"distressId": distressId,
+                                        @"victimName": vicName
+                                        }
+                                block:^(NSArray *results, NSError *error) {
+                                    if (!error) {
+                                        // this is where you handle the results and change the UI.
+                                        
+                                    }
+                                }];
 }
 
 - (IBAction)btnCallPoliceTapped:(id)sender
