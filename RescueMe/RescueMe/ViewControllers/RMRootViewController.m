@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_IS_USER_LOGGED_IN];
+    [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_IS_USER_LOGGED_IN];
     
 //    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA09191E13E700A3527E /* MapKit.framework */; };
 		A614DA0E191E1CC000A3527E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0D191E1CC000A3527E /* Parse.framework */; };
+		A614DA10191E3C1200A3527E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA0F191E3C1200A3527E /* AddressBook.framework */; };
 		A6C4DF7D191DFE7F003B37BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7C191DFE7F003B37BA /* Foundation.framework */; };
 		A6C4DF7F191DFE7F003B37BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */; };
 		A6C4DF81191DFE7F003B37BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF80191DFE7F003B37BA /* UIKit.framework */; };
@@ -56,6 +57,7 @@
 		A614DA09191E13E700A3527E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A614DA0C191E1AAA00A3527E /* RMCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMCommonConstants.h; path = Source/RMCommonConstants.h; sourceTree = "<group>"; };
 		A614DA0D191E1CC000A3527E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = RescueMe/Frameworks/Parse.framework; sourceTree = "<group>"; };
+		A614DA0F191E3C1200A3527E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A6C4DF79191DFE7F003B37BA /* RescueMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RescueMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C4DF7C191DFE7F003B37BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A614DA10191E3C1200A3527E /* AddressBook.framework in Frameworks */,
 				E121C843191E2BC7003E34D6 /* SystemConfiguration.framework in Frameworks */,
 				E121C841191E2BBE003E34D6 /* StoreKit.framework in Frameworks */,
 				E121C83F191E2BB7003E34D6 /* Security.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		A6C4DF7B191DFE7F003B37BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A614DA0F191E3C1200A3527E /* AddressBook.framework */,
 				E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */,
 				E121C840191E2BBE003E34D6 /* StoreKit.framework */,
 				E121C83E191E2BB7003E34D6 /* Security.framework */,
