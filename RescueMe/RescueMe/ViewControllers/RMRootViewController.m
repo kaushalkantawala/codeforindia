@@ -27,6 +27,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMAccountNavigationController"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+//    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+//    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressViewController"];
 }
 
 - (void)didReceiveMemoryWarning

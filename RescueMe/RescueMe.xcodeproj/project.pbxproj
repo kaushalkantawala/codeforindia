@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A614DA09191E13E700A3527E /* MapKit.framework */; };
 		A6C4DF7D191DFE7F003B37BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7C191DFE7F003B37BA /* Foundation.framework */; };
 		A6C4DF7F191DFE7F003B37BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */; };
 		A6C4DF81191DFE7F003B37BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6C4DF80191DFE7F003B37BA /* UIKit.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A614DA09191E13E700A3527E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A6C4DF79191DFE7F003B37BA /* RescueMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RescueMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C4DF7C191DFE7F003B37BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +88,7 @@
 			files = (
 				A6C4DF7F191DFE7F003B37BA /* CoreGraphics.framework in Frameworks */,
 				A6C4DF81191DFE7F003B37BA /* UIKit.framework in Frameworks */,
+				A614DA0A191E13E700A3527E /* MapKit.framework in Frameworks */,
 				A6C4DF7D191DFE7F003B37BA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +128,7 @@
 		A6C4DF7B191DFE7F003B37BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A614DA09191E13E700A3527E /* MapKit.framework */,
 				A6C4DF7C191DFE7F003B37BA /* Foundation.framework */,
 				A6C4DF7E191DFE7F003B37BA /* CoreGraphics.framework */,
 				A6C4DF80191DFE7F003B37BA /* UIKit.framework */,
@@ -248,6 +252,16 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DJ911;
 				TargetAttributes = {
+					A6C4DF78191DFE7F003B37BA = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					A6C4DF99191DFE7F003B37BA = {
 						TestTargetID = A6C4DF78191DFE7F003B37BA;
 					};
