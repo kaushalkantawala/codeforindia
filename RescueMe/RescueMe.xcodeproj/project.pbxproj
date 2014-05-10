@@ -513,6 +513,7 @@
 				A6C4DFAD191DFE7F003B37BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6C4DFAE191DFE7F003B37BA /* Build configuration list for PBXNativeTarget "RescueMeTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				A6C4DFB0191DFE7F003B37BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
