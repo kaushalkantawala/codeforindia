@@ -63,7 +63,18 @@
 
 - (IBAction)btnCallPoliceTapped:(id)sender
 {
-    
+    NSString *stringUrl = [NSString stringWithFormat:@"tel:%@", @"510-900-9211"];
+    NSURL *url = [[NSURL alloc] initWithString:[stringUrl stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (BOOL)canDeviceCall
+{
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel:+11111"]])
+        return YES;
+    else
+        return NO;
 }
 
 @end
