@@ -25,6 +25,9 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    NSString* deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    [[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:@"deviceId"];
+    
     return YES;
 }
 
@@ -56,10 +59,12 @@
 }
 
 - (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    NSArray* channelsList = [NSArray arrayWithObjects:[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"],nil];
+    [currentInstallation setChannels:channelsList];
     [currentInstallation saveInBackground];
 }
 

@@ -57,21 +57,19 @@
 
 - (IBAction)btnCreateAccountTapped:(id)sender
 {
-    NSString* deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
     [[NSUserDefaults standardUserDefaults] setObject:_txtFirstName.text forKey:@"FirstName"];
     [[NSUserDefaults standardUserDefaults] setObject:_txtLastName.text forKey:@"LastName"];
     [[NSUserDefaults standardUserDefaults] setObject:_txtPassword.text forKey:@"Password"];
     [[NSUserDefaults standardUserDefaults] setObject:_txtPhoneNumber.text forKey:@"Phone"];
-    [[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:@"deviceId"];
     
     PFObject* userObject = [PFObject objectWithClassName:@"UserObject"];
-    userObject[@"UserId"] = deviceId;
+    userObject[@"UserId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"] ;
     userObject[@"FirstName"] = _txtFirstName.text;
     userObject[@"LastName"] = _txtLastName.text;
     userObject[@"Password"] = _txtPassword.text;
     userObject[@"Phone"] = _txtPhoneNumber.text;
-    userObject[@"DeviceId"] = deviceId;
+    userObject[@"DeviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"] ;
     [userObject saveInBackground];
     [[RMLocationController sharedInstance] createLocationInParse];
 }
