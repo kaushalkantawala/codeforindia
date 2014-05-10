@@ -7,6 +7,7 @@
 //
 
 #import "RMRootViewController.h"
+#import "RMCommonConstants.h"
 
 @interface RMRootViewController ()
 
@@ -28,18 +29,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMAccountNavigationController"];
-    [self presentViewController:vc animated:YES completion:nil];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_IS_USER_LOGGED_IN];
     
-//    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
-//    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressViewController"];
+//    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    UIViewController * vc;
+    
+    BOOL didReceivePN = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_DID_RECEIVE_PUSH_NOTIFICATION] boolValue];
+    BOOL isUserLoggedIn = [[[NSUserDefaults standardUserDefaults] objectForKey:RM_IS_USER_LOGGED_IN] boolValue];
+    
+    if (didReceivePN) {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+    }
+    else if (isUserLoggedIn) {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressViewController"];
+    }
+    else {
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMAccountNavigationController"];
+    }
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 /*
