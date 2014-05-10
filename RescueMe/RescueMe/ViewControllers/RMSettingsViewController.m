@@ -46,4 +46,35 @@
 }
 */
 
+#pragma mark - UIPickerViewDataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return 4;
+}
+
+#pragma mark - UIPickerViewDelegate
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    switch (row) {
+        case 0:
+            return @"1 mile";
+        case 1:
+            return @"2 mile";
+        case 2:
+            return @"5 mile";
+        case 3:
+            return @"10 miles";
+            
+        default:
+            return nil;
+    }
+}
+
 @end
