@@ -7,6 +7,7 @@
 //
 
 #import "RMAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation RMAppDelegate
 
