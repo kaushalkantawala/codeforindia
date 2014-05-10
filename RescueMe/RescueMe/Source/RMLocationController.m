@@ -43,7 +43,7 @@
 
 -(void) startTimer:(NSInteger) timerLengthInMinutes
 {
-    [NSTimer scheduledTimerWithTimeInterval: 300.0
+    [NSTimer scheduledTimerWithTimeInterval: timerLengthInMinutes * 60
                                      target: self
                                    selector:@selector(sendLocation:)
                                    userInfo: nil repeats:YES];
@@ -51,7 +51,7 @@
 
 -(void) sendLocation:(NSTimer *)timer
 {
-
+    [self updateLocationInParse];
 }
 
 -(void) createLocationInParse
@@ -62,6 +62,7 @@
     locationObject[@"latitude"] = [NSNumber numberWithDouble:_lat];
     locationObject[@"longitude"] = [NSNumber numberWithDouble:_lon];
     [locationObject saveInBackground];
+    [self startTimer:5];
     
 }
 
@@ -84,6 +85,23 @@
     CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
     BOOL result = (![CLLocationManager locationServicesEnabled] || (authorizationStatus == kCLAuthorizationStatusDenied)) ? NO : YES;
     return result;
+}
+
+-(void) updateLocationInParse
+{
+    [self getLocation];
+    NSString* devId = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
+    [PFCloud callFunctionInBackground:@"updateLocation"
+                       withParameters:@{@"deviceid": devId,
+                                        @"latitude": [NSNumber numberWithDouble: _lat],
+                                        @"longitude": [NSNumber numberWithDouble: _lon]
+                                        }
+                                block:^(NSArray *results, NSError *error) {
+                                    if (!error) {
+                                        // this is where you handle the results and change the UI.
+                                        
+                                    }
+                                }];
 }
 
 -(void) resetTimer
