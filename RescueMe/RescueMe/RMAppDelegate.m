@@ -19,8 +19,11 @@
      UIRemoteNotificationTypeBadge |
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
+
+    [Parse setApplicationId:@"ffpXx4E4hBuTvY05bCs6Pc6F0myJKHM19tJ82b0s"
+                  clientKey:@"zlxOwHZNoyaZKMHlM4Ikxyaus14c15kXY6zFQHJh"];
     
-    [Parse setApplicationId:@"ffpXx4E4hBuTvY05bCs6Pc6F0myJKHM19tJ82b0s" clientKey:@"zlxOwHZNoyaZKMHlM4Ikxyaus14c15kXY6zFQHJh"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }
