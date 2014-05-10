@@ -8,6 +8,7 @@
 
 #import "RMAppDelegate.h"
 #import <Parse/Parse.h>
+#import "RMCommonConstants.h"
 
 @implementation RMAppDelegate
 
@@ -27,6 +28,16 @@
     
     NSString* deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     [[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:@"deviceId"];
+    
+    NSDictionary *userInfo = [launchOptions valueForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    
+    if(apsInfo) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+        [self.window.rootViewController.view layoutSubviews];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
     
     return YES;
 }
@@ -71,6 +82,18 @@
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+//    UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController* vc = [mainstoryboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+    [self.window.rootViewController.view layoutSubviews];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+//    [self.window.rootViewController performSelector:@selector(dismiss:) withObject:nil];
+//    [self.window.rootViewController dismissViewControllerAnimated:NO completion:^{
+//        [self.window.rootViewController presentViewController:vc animated:NO completion:NULL];
+//    }];
 }
 
 @end
+

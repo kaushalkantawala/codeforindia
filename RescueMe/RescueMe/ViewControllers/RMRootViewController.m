@@ -60,6 +60,7 @@
     
     if (didReceivePN) {
         vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+                [[NSUserDefaults standardUserDefaults] setObject:@(NO) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
     }
     else if (isUserLoggedIn) {
         vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressNavigationController"];
@@ -72,6 +73,11 @@
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+
+}
+
+-(void)dismiss
+{
 
 }
 
