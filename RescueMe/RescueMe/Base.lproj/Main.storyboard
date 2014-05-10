@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tvj-Kv-WMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tvj-Kv-WMK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -63,7 +63,7 @@
         <!--Alert View Controller-->
         <scene sceneID="1dc-lr-dz2">
             <objects>
-                <viewController id="chn-7a-4Se" customClass="RMAlertViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RMAlertViewController" id="chn-7a-4Se" customClass="RMAlertViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uzr-uY-110"/>
                         <viewControllerLayoutGuide type="bottom" id="BEn-qY-StC"/>
