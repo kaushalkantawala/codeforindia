@@ -17,5 +17,4 @@
 @property (nonatomic, strong) IBOutlet UIButton *btnCreateAccount;
 
 - (IBAction)btnCreateAccountTapped:(id)sender;
-
 @end

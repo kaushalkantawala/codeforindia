@@ -28,6 +28,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _txtFirstName.delegate = self;
+    _txtLastName.delegate = self;
+    _txtPassword.delegate = self;
+    _txtPhoneNumber.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,15 +41,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == _txtPassword)
+    {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
 - (IBAction)btnCreateAccountTapped:(id)sender
 {
+    NSString* deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
     [[NSUserDefaults standardUserDefaults] setObject:_txtFirstName.text forKey:@"FirstName"];
     [[NSUserDefaults standardUserDefaults] setObject:_txtLastName.text forKey:@"LastName"];
     [[NSUserDefaults standardUserDefaults] setObject:_txtPassword.text forKey:@"Password"];
-    [[NSUserDefaults standardUserDefaults] setObject:_txtPhoneNumber forKey:@"Phone"];
-    [[NSUserDefaults standardUserDefaults] setObject:[[UIDevice currentDevice] identifierForVendor] forKey:@"deviceId"];
+    [[NSUserDefaults standardUserDefaults] setObject:_txtPhoneNumber.text forKey:@"Phone"];
+    [[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:@"deviceId"];
     
-
+    PFObject* userObject = [PFObject objectWithClassName:@"UserObject"];
+    userObject[@"UserId"] = deviceId;
+    userObject[@"FirstName"] = _txtFirstName.text;
+    userObject[@"LastName"] = _txtLastName.text;
+    userObject[@"Password"] = _txtPassword.text;
+    userObject[@"Phone"] = _txtPhoneNumber.text;
+    userObject[@"DeviceId"] = deviceId;
+    [userObject saveInBackground];
 }
 
 /*
