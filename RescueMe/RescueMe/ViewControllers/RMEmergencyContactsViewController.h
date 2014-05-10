@@ -10,6 +10,7 @@
 
 @interface RMEmergencyContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSMutableArray *emergencyContacts;
 @property (nonatomic, strong) IBOutlet UITableView *tableViewContactPicker;
 @property (nonatomic, strong) IBOutlet UIButton *btnConfirmContacts;
 

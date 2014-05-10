@@ -64,7 +64,7 @@
         vc = [storyboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
     }
     else if (isUserLoggedIn) {
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressViewController"];
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"RMDistressNavigationController"];
     }
     else {
         vc = [storyboard instantiateViewControllerWithIdentifier:@"RMAccountNavigationController"];
