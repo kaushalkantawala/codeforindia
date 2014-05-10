@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tvj-Kv-WMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="tvj-Kv-WMK">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -191,7 +191,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MAI-Nc-Uzs" kind="modal" id="5uD-C8-mGG"/>
+                                    <action selector="btnCreateAccountTapped:" destination="4V9-3y-tRi" eventType="touchUpInside" id="dB3-bs-EKd"/>
+                                    <segue destination="MAI-Nc-Uzs" kind="modal" id="369-l7-V3f"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-fQ-GWN">
@@ -251,10 +252,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="7hm-Dn-2GF"/>
                     <connections>
-                        <outlet property="txtFirstName" destination="E31-pK-VYE" id="gC3-jj-yIi"/>
-                        <outlet property="txtLastName" destination="L5o-5D-5t2" id="Mg2-YK-NCF"/>
-                        <outlet property="txtPassword" destination="4is-0r-Jcy" id="XPX-Tk-6dT"/>
-                        <outlet property="txtPhoneNumber" destination="PiE-8V-b9f" id="Z3f-zv-OsF"/>
+                        <outlet property="btnCreateAccount" destination="D88-em-1ep" id="TPg-Oq-lMb"/>
+                        <outlet property="txtFirstName" destination="E31-pK-VYE" id="kg9-1e-6nc"/>
+                        <outlet property="txtLastName" destination="L5o-5D-5t2" id="Gdf-in-p8v"/>
+                        <outlet property="txtPassword" destination="4is-0r-Jcy" id="qtd-zU-WoQ"/>
+                        <outlet property="txtPhoneNumber" destination="PiE-8V-b9f" id="oeP-A9-NG0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yc-X0-AKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,6 +410,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="yGb-Nl-t5I"/>
+        <segue reference="8MX-GL-bhQ"/>
     </inferredMetricsTieBreakers>
 </document>
