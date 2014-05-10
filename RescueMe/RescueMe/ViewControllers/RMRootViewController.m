@@ -8,6 +8,7 @@
 
 #import "RMRootViewController.h"
 #import "RMCommonConstants.h"
+#import "Parse/Parse.h"
 
 @interface RMRootViewController ()
 
@@ -32,6 +33,10 @@
     [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_IS_USER_LOGGED_IN];
     
 //    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"RescueMeTestObject"];
+    testObject[@"distressId"] = @"RonakSTFU";
+    [testObject saveInBackground];
 
 }
 
