@@ -45,6 +45,7 @@
 		E121C843191E2BC7003E34D6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E121C842191E2BC7003E34D6 /* SystemConfiguration.framework */; };
 		E121C846191E5314003E34D6 /* RMLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E121C845191E5314003E34D6 /* RMLocationController.m */; };
 		E121C848191ECFA9003E34D6 /* sexy-halloween-costume-idea-super-girl8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E121C847191ECFA9003E34D6 /* sexy-halloween-costume-idea-super-girl8.jpg */; };
+		E121C84C191EF137003E34D6 /* vector-super-girl.png in Resources */ = {isa = PBXBuildFile; fileRef = E121C84B191EF137003E34D6 /* vector-super-girl.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		E121C844191E5314003E34D6 /* RMLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMLocationController.h; path = Source/RMLocationController.h; sourceTree = "<group>"; };
 		E121C845191E5314003E34D6 /* RMLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMLocationController.m; path = Source/RMLocationController.m; sourceTree = "<group>"; };
 		E121C847191ECFA9003E34D6 /* sexy-halloween-costume-idea-super-girl8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sexy-halloween-costume-idea-super-girl8.jpg"; sourceTree = "<group>"; };
+		E121C84B191EF137003E34D6 /* vector-super-girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vector-super-girl.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		A6097E1B191E810100555224 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E121C84B191EF137003E34D6 /* vector-super-girl.png */,
 				E121C847191ECFA9003E34D6 /* sexy-halloween-costume-idea-super-girl8.jpg */,
 				A6097E26191EC9C700555224 /* stop-button.png */,
 				A6097E1C191E814800555224 /* help-button.png */,
@@ -368,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E121C84C191EF137003E34D6 /* vector-super-girl.png in Resources */,
 				A6097E1D191E814800555224 /* help-button.png in Resources */,
 				E121C848191ECFA9003E34D6 /* sexy-halloween-costume-idea-super-girl8.jpg in Resources */,
 				A6C4DF95191DFE7F003B37BA /* Images.xcassets in Resources */,
