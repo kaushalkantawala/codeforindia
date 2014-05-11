@@ -92,7 +92,7 @@
     [testObject saveInBackground];
     
     [PFCloud callFunctionInBackground:@"push"
-                       withParameters:@{ @"distressId": distressId }
+                       withParameters:@{ @"distressId": distressId, @"deviceId": deviceId }
                                 block:^(NSArray *results, NSError *error) {
                                     if (!error) {
                                         // this is where you handle the results and change the UI.

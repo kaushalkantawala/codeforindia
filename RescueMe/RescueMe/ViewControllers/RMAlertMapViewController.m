@@ -115,7 +115,8 @@
 
 - (IBAction)btnRouteTapped:(id)sender
 {
-    [self openDirectionTo:((MKPlacemark *)self.points[self.points.count - 1]).coordinate];
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([self.points[self.points.count - 1][@"lat"] doubleValue], [self.points[self.points.count - 1][@"long"] doubleValue]);
+    [self openDirectionTo:coordinate];
 }
 
 - (void)openDirectionTo:(CLLocationCoordinate2D)destinationCoordinate

@@ -29,7 +29,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *distressId = [[NSUserDefaults standardUserDefaults] objectForKey:@"distressId"];
+    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:@"victimName"];
+    
+    self.lblDistressedInfo.text = [NSString stringWithFormat:@"%@ is in distress", name];
+    
+//    PFQuery *query = [PFQuery queryWithClassName:@"distress"];
+//    [query whereKey:@"distressId" equalTo:distressId];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %lu lat/lng.", (unsigned long)objects.count);
+//            // Do something with the found objects
+//            for (PFObject *object in objects) {
+//                NSLog(@"%@", object.objectId);
+//            }
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +83,7 @@
     NSString* vicName = [[NSUserDefaults standardUserDefaults] objectForKey:@"victimName"];
     NSString* distressId = devId;
     [PFCloud callFunctionInBackground:@"acknowledge"
-                       withParameters:@{@"deviceid": [[NSUserDefaults standardUserDefaults] objectForKey:@""],
+                       withParameters:@{@"deviceId": [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"],
                                         @"distressId": distressId,
                                         @"victimName": vicName
                                         }
@@ -73,6 +93,7 @@
                                         
                                     }
                                 }];
+    // Ack back to the parse server that the user has now acknowledged the distress signal as an emergency contact.
 }
 
 - (IBAction)btnCallPoliceTapped:(id)sender
