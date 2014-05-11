@@ -229,8 +229,9 @@ Parse.Cloud.define("pushNotification",function(request,response){
 });
 
 
-Parse.Cloud.define("acknowledge",function(){
+Parse.Cloud.define("acknowledge",function(request,response){
 	
+	console.log("Inside acknowledge");
 	var deviceId = request.params.deviceId;
 	var distressId = request.params.distressId;
 	var distress_query = new Parse.Query("distress");
@@ -286,27 +287,33 @@ Parse.Cloud.define("push",function(request,response){
 					response.error("Found no distresses reported by device : "+ deviceId);
 				}
 	});*/
-	
-	var data = {
-				distressId : distressId,
-				deviceid:deviceid
-				
-	};
+	var ack_query;
+	console.log("Inside Push");
+	console.log("deviceid : "+deviceid+" distressId : "+distressId);
 	Parse.Cloud.run("pushNotification",{ deviceid : deviceid,distressId :distressId });
-	//Parse.Cloud.run("pushNotification",data);
-	/*Parse.Push.send({
-											//console.log("Sending push notifications to recipients : "+ recipients);
-											channels : ["F67940D0-C4DC-4E2D-862F-E5FCB94BC609"],
-											data : {
-												alert : "I neddd helpppp"
-											}
-										},{
-											success : function(channels){
-												console.log("Push notification successful to recipients: "+ channels);
-											},
-											error : function(channels,error){
-												console.log("Push notification unsuccessful to recipients: "+ channels +" : "+error);
-											}
-									});	
-									*/
+	/*var ack = false;
+	while(!ack){
+		//console.log("Inside while");
+		ack_query=new Parse.Query("distress");
+		ack_query.equalTo("distressId",distressId);
+		ack_query.find({
+				success:function(incident){
+					console.log("Incident found : "+incident);
+					if(incident[0].get("ack").length == 0){
+						console.log("Calling pushNotification...");
+						Parse.Cloud.run("pushNotification",{ deviceid : deviceid,distressId :distressId });
+					}else{
+						console.log("Acknowledgement already received : "+incident[0].get("ack"));
+						ack = true;
+						//continue;
+					}
+				},
+				error : function(distressId){
+					console.log("Did not find incident with id : "+distressId);
+					response.error("Did not find incident with id : "+distressId);
+				}
+		}); 
+	
+	
+	}*/
 });
