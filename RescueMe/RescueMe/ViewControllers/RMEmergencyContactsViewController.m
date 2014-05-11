@@ -105,6 +105,10 @@
                  
                  CFRelease(allPeople);
                  
+                 NSSortDescriptor *nameDesc = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+                 NSArray *sortDescriptors = @[nameDesc];
+                 self.contacts = [NSMutableArray arrayWithArray:[self.contacts sortedArrayUsingDescriptors:sortDescriptors]];
+                 
                  [self.tableViewContactPicker reloadData];
              });
          }
