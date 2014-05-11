@@ -8,6 +8,7 @@
 
 #import "RMAppDelegate.h"
 #import <Parse/Parse.h>
+#import "RMCommonConstants.h"
 
 @implementation RMAppDelegate
 
@@ -20,10 +21,27 @@
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
 
+    sleep(2);
+    
     [Parse setApplicationId:@"ffpXx4E4hBuTvY05bCs6Pc6F0myJKHM19tJ82b0s"
                   clientKey:@"zlxOwHZNoyaZKMHlM4Ikxyaus14c15kXY6zFQHJh"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    NSString* deviceId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    [[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:@"deviceId"];
+    
+    NSDictionary *userInfo = [launchOptions valueForKey:@"UIApplicationLaunchOptionsRemoteNotificationKey"];
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    
+    if(apsInfo) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+        [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"alert"] forKey:@"victimName"];
+        [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"title"] forKey:@"distressId"];
+        [self.window.rootViewController.view layoutSubviews];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
     
     return YES;
 }
@@ -56,16 +74,33 @@
 }
 
 - (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
+    didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)newDeviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:newDeviceToken];
+    NSArray* channelsList = [NSArray arrayWithObjects:[[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"],nil];
+    [currentInstallation setChannels:channelsList];
     [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+//    UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UIViewController* vc = [mainstoryboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
+    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+    NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
+    [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"alert"] forKey:@"victimName"];
+    [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"title"] forKey:@"distressId"];
+    [self.window.rootViewController.view layoutSubviews];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+//    [self.window.rootViewController performSelector:@selector(dismiss:) withObject:nil];
+//    [self.window.rootViewController dismissViewControllerAnimated:NO completion:^{
+//        [self.window.rootViewController presentViewController:vc animated:NO completion:NULL];
+//    }];
 }
 
 @end
+

@@ -9,6 +9,7 @@
 #import "RMAlertViewController.h"
 
 #import "RMAlertMapViewController.h"
+#import <Parse/Parse.h>
 
 @interface RMAlertViewController ()
 
@@ -58,12 +59,36 @@
 
 - (IBAction)btnDismissTapped:(id)sender
 {
-    
+    NSString* devId = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
+    NSString* vicName = [[NSUserDefaults standardUserDefaults] objectForKey:@"victimName"];
+    NSString* distressId = devId;
+    [PFCloud callFunctionInBackground:@"acknowledge"
+                       withParameters:@{@"deviceid": [[NSUserDefaults standardUserDefaults] objectForKey:@""],
+                                        @"distressId": distressId,
+                                        @"victimName": vicName
+                                        }
+                                block:^(NSArray *results, NSError *error) {
+                                    if (!error) {
+                                        // this is where you handle the results and change the UI.
+                                        
+                                    }
+                                }];
 }
 
 - (IBAction)btnCallPoliceTapped:(id)sender
 {
-    
+    NSString *stringUrl = [NSString stringWithFormat:@"tel:%@", @"510-900-9211"];
+    NSURL *url = [[NSURL alloc] initWithString:[stringUrl stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+
+    [[UIApplication sharedApplication] openURL:url];
+}
+
+- (BOOL)canDeviceCall
+{
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel:+11111"]])
+        return YES;
+    else
+        return NO;
 }
 
 @end

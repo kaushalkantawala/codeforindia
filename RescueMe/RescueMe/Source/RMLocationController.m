@@ -9,6 +9,7 @@
 #import "RMLocationController.h"
 #import "CoreLocation/CLLocationManager.h"
 #import "Parse/Parse.h"
+#import "Parse/PFGeopoint.h"
 
 @interface RMLocationController()
 
@@ -57,10 +58,12 @@
 -(void) createLocationInParse
 {
     [self getLocation];
+    PFGeoPoint* gp = [PFGeoPoint geoPointWithLatitude:_lat longitude:_lon];
     PFObject* locationObject = [PFObject objectWithClassName:@"Location"];
     locationObject[@"deviceId"] = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
     locationObject[@"latitude"] = [NSNumber numberWithDouble:_lat];
     locationObject[@"longitude"] = [NSNumber numberWithDouble:_lon];
+    locationObject[@"geopoint"] = gp;
     [locationObject saveInBackground];
     [self startTimer:5];
     
@@ -90,11 +93,13 @@
 -(void) updateLocationInParse
 {
     [self getLocation];
+    PFGeoPoint* gp = [PFGeoPoint geoPointWithLatitude:_lat longitude:_lon];
     NSString* devId = [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"];
     [PFCloud callFunctionInBackground:@"updateLocation"
                        withParameters:@{@"deviceid": devId,
                                         @"latitude": [NSNumber numberWithDouble: _lat],
-                                        @"longitude": [NSNumber numberWithDouble: _lon]
+                                        @"longitude": [NSNumber numberWithDouble: _lon],
+                                        @"geopoint" :gp
                                         }
                                 block:^(NSArray *results, NSError *error) {
                                     if (!error) {
