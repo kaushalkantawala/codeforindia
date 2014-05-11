@@ -88,13 +88,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
 //    UIStoryboard *mainstoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    UIViewController* vc = [mainstoryboard instantiateViewControllerWithIdentifier:@"RMRescueMeNavigationController"];
-    [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
     NSDictionary *apsInfo = [userInfo objectForKey:@"aps"];
-    [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"alert"] forKey:@"victimName"];
-    [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"title"] forKey:@"distressId"];
-    [self.window.rootViewController.view layoutSubviews];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    if (apsInfo) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:RM_DID_RECEIVE_PUSH_NOTIFICATION];
+        [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"alert"] forKey:@"victimName"];
+        [[NSUserDefaults standardUserDefaults] setObject:[apsInfo objectForKey:@"title"] forKey:@"distressId"];
+        [self.window.rootViewController.view layoutSubviews];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    }
     
 //    [self.window.rootViewController performSelector:@selector(dismiss:) withObject:nil];
 //    [self.window.rootViewController dismissViewControllerAnimated:NO completion:^{

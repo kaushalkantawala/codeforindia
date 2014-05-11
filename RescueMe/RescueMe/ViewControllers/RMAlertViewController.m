@@ -83,7 +83,7 @@
     NSString* vicName = [[NSUserDefaults standardUserDefaults] objectForKey:@"victimName"];
     NSString* distressId = devId;
     [PFCloud callFunctionInBackground:@"acknowledge"
-                       withParameters:@{@"deviceid": [[NSUserDefaults standardUserDefaults] objectForKey:@""],
+                       withParameters:@{@"deviceId": [[NSUserDefaults standardUserDefaults] objectForKey:@"deviceId"],
                                         @"distressId": distressId,
                                         @"victimName": vicName
                                         }
